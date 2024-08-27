@@ -1,0 +1,77 @@
+.audio-player {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #282c34;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    max-width: 600px; /* Maksimal kenglik */
+    margin: auto; /* Markazlashtirish */
+    width: 100%; /* To'liq kenglik */
+}
+
+.controls {
+    display: flex;
+    flex-wrap: wrap; /* Tugmalarni qatorlarga joylashtirish */
+    justify-content: center;
+    margin: 10px 0;
+}
+
+.play-button, .nav-button, .seek-button, .toggle-track-list {
+    background-color: transparent; /* Orqa fon rangini shaffof qilish */
+    border: none; /* Chegarani olib tashlash */
+    color: #61dafb; /* Matn rangi */
+    font-size: 16px; /* Matn o'lchami */
+    cursor: pointer; /* Kursorni qo'shish */
+    padding: 10px; /* Ichki bo'shliq */
+    transition: color 0.3s; /* Rang o'zgarishi uchun animatsiya */
+    margin: 5px; /* Tugmalar orasidagi bo'shliq */
+}
+
+.play-button:hover, .nav-button:hover, .seek-button:hover, .toggle-track-list:hover {
+    color: #21a1f1; /* Hover holatida rang o'zgarishi */
+}
+
+.time-display {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 10px 0;
+    width: 100%; /* To'liq kenglik */
+}
+
+.track-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 10px 0;
+    width: 100%; /* To'liq kenglik */
+}
+
+.track-list li {
+    cursor: pointer;
+    padding: 5px;
+    transition: background-color 0.3s;
+}
+
+.track-list li:hover {
+    background-color: #61dafb;
+}
+
+/* Responsive dizayn */
+@media (max-width: 600px) {
+    .play-button, .nav-button, .seek-button, .toggle-track-list {
+        font-size: 14px; /* Kichik ekranlar uchun matn o'lchamini kamaytirish */
+        padding: 8px; /* Tugmalarni kichikroq qilish */
+    }
+
+    .time-display {
+        flex-direction: column; /* Vaqt ko'rsatkichlarini ustun qilib joylashtirish */
+        align-items: flex-start; /* Chapga joylashtirish */
+    }
+
+    .time-display span {
+        margin-bottom: 5px; /* Vaqt ko'rsatkichlari orasidagi bo'shliq */
+    }
+}
