@@ -66,6 +66,30 @@ function AudioPlayer() {
     }
   }, [currentTrack]);
 
+  // Media Session API
+  useEffect(() => {
+    if ('mediaSession' in navigator) {
+      navigator.mediaSession.metadata = new MediaMetadata({
+        title: musicData[currentTrack].title,
+        artist: 'Jaloliddin Ahmadaliyev', // San'atkor nomi
+        album: 'Musiqa', // Albom nomi
+        artwork: [
+          { src: 'https://picsum.photos/96/96', sizes: '96x96', type: 'image/jpeg' },
+          { src: 'https://picsum.photos/128/128', sizes: '128x128', type: 'image/jpeg' },
+          { src: 'https://picsum.photos/192/192', sizes: '192x192', type: 'image/jpeg' },
+          { src: 'https://picsum.photos/256/156', sizes: '256x256', type: 'image/jpeg' },
+          { src: 'https://picsum.photos/384/384', sizes: '384x384', type: 'image/jpeg' },
+          { src: 'https://picsum.photos/512/512', sizes: '512x512', type: 'image/jpeg' },
+        ]
+      });
+
+      navigator.mediaSession.setActionHandler('play', togglePlay);
+      navigator.mediaSession.setActionHandler('pause', togglePlay);
+      navigator.mediaSession.setActionHandler('previoustrack', prevTrack);
+      navigator.mediaSession.setActionHandler('nexttrack', nextTrack);
+    }
+  }, [currentTrack, isPlaying]);
+
   return (
     <div className="audio-player mx-auto ">
       <audio ref={audioRef} onTimeUpdate={handleTimeUpdate} />
