@@ -9,7 +9,7 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     max-width: 600px; /* Maksimal kenglik */
     margin: auto; /* Markazlashtirish */
-    width: 100%; /* To'liq kenglik */
+    /* To'liq kenglik */
 }
 
 .controls {
@@ -39,7 +39,8 @@
     align-items: center;
     justify-content: space-between;
     margin: 10px 0;
-    width: 100%; /* To'liq kenglik */
+
+     /* To'liq kenglik */
 }
 
 .track-list {
@@ -47,6 +48,7 @@
     padding: 0;
     margin: 10px 0;
     width: 100%; /* To'liq kenglik */
+    text-align: center; /* Qo'shiq nomlarini markazlashtirish */
 }
 
 .track-list li {
@@ -66,12 +68,16 @@
         padding: 8px; /* Tugmalarni kichikroq qilish */
     }
 
-    .time-display {
-        flex-direction: column; /* Vaqt ko'rsatkichlarini ustun qilib joylashtirish */
+    .time-display { /* Vaqt ko'rsatkichlarini ustun qilib joylashtirish */
         align-items: flex-start; /* Chapga joylashtirish */
     }
 
     .time-display span {
         margin-bottom: 5px; /* Vaqt ko'rsatkichlari orasidagi bo'shliq */
+    }
+
+    .track-list li {
+        font-size: 14px; /* Kichik ekranlar uchun matn o'lchamini kamaytirish */
+        padding: 8px; /* Tugmalarni kichikroq qilish */
     }
 }

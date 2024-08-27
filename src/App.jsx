@@ -67,7 +67,7 @@ function AudioPlayer() {
   }, [currentTrack]);
 
   return (
-    <div className="audio-player">
+    <div className="audio-player mx-auto ">
       <audio ref={audioRef} onTimeUpdate={handleTimeUpdate} />
       <h3>{musicData[currentTrack].title}</h3>
 
@@ -110,7 +110,7 @@ function AudioPlayer() {
         
       </div>
       <button
-          className="toggle-track-list"
+          className="toggle-track-list text-center"
           onClick={() => setShowTrackList(!showTrackList)}
         >
           {showTrackList ? "Hide Tracks" : "Show Tracks"}
